@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Modern blue color palette */
+    --color-blue-50: #f0f9ff;
+    --color-blue-100: #e0f2fe;
+    --color-blue-200: #bae6fd;
+    --color-blue-300: #7dd3fc;
+    --color-blue-400: #38bdf8;
+    --color-blue-500: #0ea5e9;
+    --color-blue-600: #0284c7;
+    --color-blue-700: #0369a1;
+    --color-blue-800: #075985;
+    --color-blue-900: #0c4a6e;
+    
+    --color-primary: var(--color-blue-600);
+    --color-primary-light: var(--color-blue-400);
+    --color-primary-dark: var(--color-blue-800);
+  }
+
+  * {
+    font-family: 'Outfit', sans-serif;
+    @apply antialiased;
+  }
+
+  body {
+    @apply bg-blue-50 text-blue-900;
+  }
+
+  .active hr {
+    @apply block;
+  }
+
+  .active p {
+    @apply text-white bg-primary;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 740px) {
+    .active p {
+      @apply px-3 py-1 rounded-lg;
+    }
+  }
+
+  /* Scrollbar styling (hidden by default) */
+  ::-webkit-scrollbar {
+    @apply w-2 h-2;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-blue-50;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-blue-300 rounded-full hover:bg-blue-400;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary hover:bg-primary-dark text-white px-6 py-2 rounded-lg shadow-md transition-all duration-200;
+  }
+
+  .btn-secondary {
+    @apply bg-blue-100 hover:bg-blue-200 text-blue-700 px-6 py-2 rounded-lg border border-blue-200 transition-all duration-200;
+  }
+
+  .card {
+    @apply bg-white rounded-xl shadow-md overflow-hidden border border-blue-100;
+  }
+
+  .nav-link {
+    @apply text-blue-700 hover:text-primary-dark transition-colors;
+  }
+}
