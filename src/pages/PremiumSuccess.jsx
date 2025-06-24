@@ -19,11 +19,11 @@ const PremiumSuccess = () => {
   const handleSuccess = async (sessionId) => {
     try {
       await axios.post(
-        `${backendUrl}/api/premium/payment-success`,
+        `https://68588a5f33cfb9dc6e33414a--77abib.netlify.app/api/premium/payment-success`,
         { session_id: sessionId },
         { 
           headers: { 
-            'Authorization': `Bearer ${token}`,
+            'Authorization': `Bearer ${token}`,      
             'Content-Type': 'application/json'
           }
         }
